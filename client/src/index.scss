@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.17em;
+}
+h5 {
+  font-size: 0.83em;
+}
+h6 {
+  font-size: 0.75em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bolder;
+}
+
+pre {
+  background-color: rgb(234, 233, 233);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+blockquote {
+  font-size: 1.4em;
+  width: 70%;
+  margin: 50px auto;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #374fd5;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: #374fd5;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: "";
+}
+
+blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+
+.jodit-toolbar-button__text {
+  blockquote {
+    font-size: inherit;
+    margin: inherit;
+    font-style: inherit;
+    color: inherit;
+    border-left: none;
+    line-height: inherit;
+    position: relative;
+    background: inherit;
+  }
+
+  blockquote::before {
+    content: "";
+    font-size: inherit;
+  }
+
+  blockquote span{
+    display:block;
+    color:inherit;
+    font-style: normal;
+    font-weight: normal;
+    margin-top:inherit;
+  }
+}
