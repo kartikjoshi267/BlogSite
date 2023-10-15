@@ -7,7 +7,11 @@ import _ from "lodash";
 import JoditEditor from "jodit-react";
 
 const BlogPage: React.FC = () => {
-  const backend_uri: string = import.meta.env.VITE_BACKEND_URI;
+  let host = import.meta.env.VITE_BACKEND_URI;
+  if (host === undefined){
+    host = location.protocol + "//" + location.hostname;
+  }
+  const backend_uri: string = host;
   const isLoggedIn = useRecoilValue(loggedInState);
   const [author, setAuthor] = useState(null);
   const [blog, setBlog] = useState(null);

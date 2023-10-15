@@ -7,7 +7,11 @@ const Blog: React.ElementType = ({ blog }) => {
   const [author, setAuthor] = useState(null);
 
   // URI for Backend
-  const backend_uri: string = String(import.meta.env.VITE_BACKEND_URI) + "/users";
+  let host = import.meta.env.VITE_BACKEND_URI;
+  if (host === undefined){
+    host = location.protocol + "//" + location.hostname;
+  }
+  const backend_uri: string = String(host) + "/users";
 
   useEffect(() => {
     const fetchAuthor = async () => {

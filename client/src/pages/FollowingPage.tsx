@@ -21,7 +21,11 @@ const FollowersPage: React.FC = () => {
   useEffect(() => {
     const fetchFollowing: any = async () => {
       if (!_.isEqual(otherUser, {})){
-        const res: any = await fetch(import.meta.env.VITE_BACKEND_URI+"/users/getfollowing", {
+        let host = import.meta.env.VITE_BACKEND_URI;
+        if (host === undefined){
+          host = location.protocol + "//" + location.hostname;
+        }
+        const res: any = await fetch(host+"/users/getfollowing", {
           headers: {
             "Content-Type": "application/json"
           },
@@ -43,7 +47,11 @@ const FollowersPage: React.FC = () => {
     fetchUser();
   }, [username]);
 
-  const backend_uri: string = import.meta.env.VITE_BACKEND_URI + "/users";
+  let host = import.meta.env.VITE_BACKEND_URI;
+  if (host === undefined){
+    host = location.protocol + "//" + location.hostname;
+  }
+  const backend_uri: string = host + "/users";
 
   const handleFollowing: any = async (id) => {
     await fetch(`${backend_uri}/updatefollowing`, {

@@ -22,8 +22,12 @@ const cookies = new Cookies();
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 // URI for Backend
-const backend_uri_blogs: string = import.meta.env.VITE_BACKEND_URI + "/blogs";
-const backend_uri_users: string = import.meta.env.VITE_BACKEND_URI + "/users";
+let host = import.meta.env.VITE_BACKEND_URI;
+if (host === undefined){
+  host = location.protocol + "//" + location.hostname;
+}
+const backend_uri_blogs: string = host + "/blogs";
+const backend_uri_users: string = host + "/users";
 
 // Functions related to blogs
 const addBlog: any = async (blog: any, setAllBlogs: any) => {

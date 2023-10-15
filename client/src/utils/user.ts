@@ -51,7 +51,11 @@ const cookies = new Cookies();
 // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 // URI for Backend
-const backend_uri: string = import.meta.env.VITE_BACKEND_URI + "/users";
+let host = import.meta.env.VITE_BACKEND_URI;
+if (host === undefined){
+  host = location.protocol + "//" + location.hostname;
+}
+const backend_uri: string = host + "/users";
 
 // Functions related to user
 const createUser: any = async (credentials: any) => {
