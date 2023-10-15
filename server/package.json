@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "tsc",
-    "start": "nodemon server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install && npm install --prefix ../client && npm run build --prefix ../client",
+    "server": "nodemon server.ts",
+    "start": "node server.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,13 +20,13 @@
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.1",
-    "mongoose": "^7.4.3"
-  },
-  "devDependencies": {
+    "mongoose": "^7.4.3",
     "@types/express": "^4.17.17",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^20.5.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
+  },
+  "devDependencies": {
   }
 }
