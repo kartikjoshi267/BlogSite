@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { loggedInState } from "../utils";
 
-const UserFollowComp: React.FC = ({ thisUser, user, handleFollowing }: any) => {
+const UserFollowComp: React.ElementType = ({ thisUser, user, handleFollowing }: any) => {
   const isLoggedIn = useRecoilState(loggedInState);
   return (
     <div className="text-base leading-relaxed text-gray-500 flex flex-row items-center justify-between w-full">
