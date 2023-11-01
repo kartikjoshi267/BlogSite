@@ -56,6 +56,8 @@ if (host === undefined){
   host = location.protocol + "//" + location.hostname;
 }
 const backend_uri: string = host + "/users";
+console.log(backend_uri);
+
 
 // Functions related to user
 const createUser: any = async (credentials: any) => {
