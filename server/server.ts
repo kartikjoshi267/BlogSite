@@ -8,7 +8,7 @@ import cors from 'cors';
 import path from "path";
 
 const app: Express = express();
-const PORT : number = 8000;
+const PORT : any = process.env.PORT || 8000;
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
