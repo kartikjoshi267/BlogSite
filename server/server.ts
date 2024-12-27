@@ -12,7 +12,12 @@ const app: Express = express();
 const PORT : any = process.env.PORT || 8000;
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    credentials: true,
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 // if (process.env.NODE_ENV !== 'production') {
 
