@@ -1,4 +1,3 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
 import express, { Express } from "express";
 import { config } from "dotenv";
 config();
@@ -39,7 +38,3 @@ app.use('/api/blogs', blogs);
 app.listen(PORT, () => {
     console.log('Successfully started server at http://localhost:8000');
 })
-
-export default (req: VercelRequest, res: VercelResponse) => {
-    app(req as any, res as any);
-};
